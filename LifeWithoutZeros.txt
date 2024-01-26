@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+using namespace std;
+ 
+
+string Nonzero(ll num) {
+    string number = to_string(num);
+    string result = "";
+    for(int i = 0;i < number.length();i++) {
+        if(number[i] != '0') {
+            result += number[i];
+        }
+    }
+    return result;
+}
+
+
+int main(){
+    ll a,b;
+    cin >> a >> b;
+    
+    ll result = a + b;
+    string x = Nonzero(result);
+    string y = Nonzero(a);
+    string z = Nonzero(b);
+    ll i = stoll(x);
+    ll j = stoll(y);
+    ll k = stoll(z);
+
+    if(i == j+k) {
+        cout << "YES" << endl;
+    } else{
+        cout << "NO" << endl;
+    }
+}

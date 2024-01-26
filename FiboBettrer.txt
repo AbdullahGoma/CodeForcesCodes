@@ -1,0 +1,46 @@
+
+import java.util.Scanner;
+
+public class Main {
+
+    private static Scanner scan = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int num = scan.nextInt();
+        int next = 1, prev = 0, sum;
+
+        for (int i = 0; i < num; i++) {
+            System.out.print(prev+ " ");
+            sum = next + prev;
+           prev = next; 
+           next = sum;
+        }
+    }
+
+
+}
+
+................................
+
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+void FibBetterEff(int n){
+    double a[n];
+    a[0] = 0;
+    a[1] = 1;
+    cout << a[0] << " ";
+    cout << a[1] << " ";
+    for(int i = 2;i < n;i++){
+        a[i] = a[i-1] + a[i-2];
+        cout << a[i] << " ";
+    }
+}
+
+int main(){
+    int n;
+    cin >> n;
+    FibBetterEff(n);
+    return 0;
+}

@@ -1,0 +1,72 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+void init(){
+    cin.tie(0);
+    cin.sync_with_stdio(0);
+}
+
+bool isPrime(ll n) {
+    for(int i = 2;i < n/2;i++) {
+        if(n % i == 0) return false;
+    }
+    return true;
+}
+
+int minimum(int x, int y) {
+    if(x < y) return x;
+    return y;
+}
+
+
+int main(){
+    init();
+
+    ll n,m;
+    cin >> n >> m;
+    int counter = 0;
+    int l,r;
+    int LMAX = INT_MIN;
+    int RMIN = INT_MAX;
+
+    
+    for(int i = 0;i < n;i++) {
+        cin >> l >> r;
+        LMAX = max(l,LMAX);
+        RMIN = min(r,RMIN);
+    }
+
+    for(LMAX;LMAX <= RMIN;LMAX++) {
+        if(LMAX <= m) {
+            counter++;
+        }
+    }
+
+    cout << counter << endl;
+
+}  
+
+
+// vector<ll> a(n);
+// average = sum / n;
+
+// sort(a.begin(), a.end());
+// reverse(a.begin(), a.end());
+// sum = 0;
+
+
+// vector<int> x;
+
+
+// for(int i = 0;i < n;i++) {
+//     cin >> num;
+//     x.insert(x.end(),1,num);
+// }
+
+// sort(x.begin(), x.end());
+
+// for(int i = 0;i < x.size();i++) {
+    
+// }
+

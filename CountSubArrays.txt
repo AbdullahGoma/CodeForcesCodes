@@ -1,0 +1,76 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define endl '\n'
+
+//ll prefix_sum[200000];
+
+void init(){
+    cin.tie(0);
+    cin.sync_with_stdio(0);
+}
+ll GCD(ll a, ll b) {
+    if (b == 0)
+        return a;
+    return GCD(b, a % b);
+}
+ 
+ll LCM(ll a, ll b) {
+    return a / GCD(a, b) * b;
+}
+
+bool Prime(int x) {
+    if (x < 2)
+        return false;
+    for (int i = 2; i * i <= x; i++) {
+        if (x % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool EvenOddEqual(int a[],int n) {
+    int odd = 0;
+    int even = 0;
+    for(int i = 0;i < n;i++) {
+        if(a[i] % 2 == 0) {
+            even++;
+        } else {
+            odd++;
+        }
+    }
+    return odd == even;
+}
+
+ll FibBetterEff(int n){
+    ll a[n];
+    a[0] = 0;
+    a[1] = 1;
+    for(int i = 2;i < n;i++){
+        a[i] = a[i-1] + a[i-2];
+    }
+    return a[n - 1];;
+}
+
+ 
+int main() {
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        int result = 0;
+        cin >> n;
+        int a[n];
+        for (int j = 0; j < n; j++) cin >> a[j];
+ 
+        for (int i = 0;i < n;i++) {
+            for(int j = i + 1;j < n;j++){
+                if(a[j] >= a[j - 1]) result++; 
+                else break;
+            }
+        } 
+        cout << result + n << endl;
+    }
+    return 0;
+}

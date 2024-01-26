@@ -1,0 +1,454 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+void init(){
+    cin.tie(0);
+    cin.sync_with_stdio(0);
+}
+
+int main(){
+    init();
+
+    string n;
+    cin >> n;
+    string g = "";
+    int num = n.length();
+    for(int i = 0;i < 2;i++) {
+        g += n[num - 2];
+        num ++;
+    }
+    int number =  stoi(g);
+    if(number % 4 == 0) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+
+    // vector<int> x;
+    
+
+    // for(int i = 0;i < n;i++) {
+    //     cin >> num;
+    //     x.insert(x.end(),1,num);
+    // }
+
+    // sort(x.begin(), x.end());
+
+    // for(int i = 0;i < x.size();i++) {
+        
+    // }
+
+
+}
+................
+
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+void init(){
+    cin.tie(0);
+    cin.sync_with_stdio(0);
+}
+
+bool isPrime(ll n) {
+    for(int i = 2;i < n/2;i++) {
+        if(n % i == 0) return false;
+    }
+    return true;
+}
+
+int main(){
+    init();
+
+    ll n;
+    cin >> n;
+    
+    ll s = (n - 2) * 180;
+    cout << s << endl;
+    // vector<int> x;
+    
+
+    // for(int i = 0;i < n;i++) {
+    //     cin >> num;
+    //     x.insert(x.end(),1,num);
+    // }
+
+    // sort(x.begin(), x.end());
+
+    // for(int i = 0;i < x.size();i++) {
+        
+    // }
+
+
+}
+.......................
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+void init(){
+    cin.tie(0);
+    cin.sync_with_stdio(0);
+}
+
+bool isPrime(ll n) {
+    for(int i = 2;i < n/2;i++) {
+        if(n % i == 0) return false;
+    }
+    return true;
+}
+
+int main(){
+    init();
+
+    ll n , m;
+    bool flag = false;
+    cin >> n >> m;
+    ll a[n];
+    for(int i = 0;i < n;i++) {
+        cin >> a[i];
+    }
+    sort(a, a+n);
+    ll sum = 0;
+    int count = 0;
+    for(int i = n - 1;0 <= i;i--) {
+        sum += a[i];
+        count++;
+        if(m < sum) {
+            flag = true;
+            break;
+        }
+    }
+
+    if(flag) {
+        cout << count << endl;
+    } else {
+        cout << -1 << endl;
+    }    
+
+
+
+
+
+    // vector<int> x;
+    
+
+    // for(int i = 0;i < n;i++) {
+    //     cin >> num;
+    //     x.insert(x.end(),1,num);
+    // }
+
+    // sort(x.begin(), x.end());
+
+    // for(int i = 0;i < x.size();i++) {
+        
+    // }
+
+
+}
+...................
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+void init(){
+    cin.tie(0);
+    cin.sync_with_stdio(0);
+}
+
+bool isPrime(ll n) {
+    for(int i = 2;i < n/2;i++) {
+        if(n % i == 0) return false;
+    }
+    return true;
+}
+
+int main(){
+    init();
+
+    ll a, b;
+    cin >> a >> b;
+    ll l = abs(b - a);
+    if(a == b) {
+        cout << 0 << endl;
+    } else if(a < b) {
+        cout << l << " L" << endl;
+    } else {
+        cout << l << " R" << endl;
+    }
+ 
+
+
+
+    // vector<int> x;
+    
+
+    // for(int i = 0;i < n;i++) {
+    //     cin >> num;
+    //     x.insert(x.end(),1,num);
+    // }
+
+    // sort(x.begin(), x.end());
+
+    // for(int i = 0;i < x.size();i++) {
+        
+    // }
+
+
+}
+......................
+Coach Islam wrote n
+ problems and wants to create k
+ training contests. All training contests should contain the same number of problems, and of course, each contest should contain at least one problem. Please read carefully and don't get Wrong
+ Answer
+ on
+ test
+ 4
+.
+
+Islam wants to use all the problems in these contests. The question is, how many additional problems Islam has to write?
+
+Islam is lazy, so he wants to write the minimum possible number of problems, so he asked for your help.
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+void init(){
+    cin.tie(0);
+    cin.sync_with_stdio(0);
+}
+
+bool isPrime(ll n) {
+    for(int i = 2;i < n/2;i++) {
+        if(n % i == 0) return false;
+    }
+    return true;
+}
+
+int main(){
+    init();
+
+    ll n, k;
+    cin >> n >> k;
+    ll z = (2 * k) - n;
+    if(n % k  == 0) {
+        cout << 0 << endl;
+    } else if(n < k) {
+        cout << k - n << endl;
+    } else {
+        cout << z << endl;
+    }
+    
+ 
+
+
+
+    // vector<int> x;
+    
+
+    // for(int i = 0;i < n;i++) {
+    //     cin >> num;
+    //     x.insert(x.end(),1,num);
+    // }
+
+    // sort(x.begin(), x.end());
+
+    // for(int i = 0;i < x.size();i++) {
+        
+    // }
+
+
+}
+.........................................
+
+In the imaginary world of AIC, there was a mysterious mansion that has n
+ doors and each door has a magical lock that can be opened using one of a set of different magical keys.
+
+A keychain of m
+ keys numbered from 1
+ to m
+ was found at the middle door's doorstep along with a list attached to a note that says: "Oh, you hero! Use these magical keys to open the doors of the mansion, but be careful! You have to use only the keys that have the capability to open all doors or you'll die in a mysterious way. The list may help you greatly."
+
+Inside the list n
+ lines were written, each line had a pair of numbers li
+ and ri
+ such that (1≤i≤m)
+.
+
+Each pair of numbers represents an interval of keys from li
+ to ri
+ (inclusive), which any of them can be used to open the ith
+ door.
+
+What is the maximum number of keys that can be used to open all the doors of the mansion?
+
+........................................................................
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+void init(){
+    cin.tie(0);
+    cin.sync_with_stdio(0);
+}
+
+bool isPrime(ll n) {
+    for(int i = 2;i < n/2;i++) {
+        if(n % i == 0) return false;
+    }
+    return true;
+}
+
+int main(){
+    init();
+
+    ll n, m;
+    cin >> n >> m;
+    vector<ll> a(n);
+    bool flag = false;
+    // double average = 0;
+    ll sum = 0;
+
+    for(int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    
+    for (int i = 0; i < n; i++)
+    {
+        sum += a[i];
+    }
+    // average = sum / n;
+
+    // sort(a.begin(), a.end());
+    // reverse(a.begin(), a.end());
+    // sum = 0;
+    ll diff = sum - m;
+    for (int i = 2; i < n; i++)
+    {
+        if(sum <= m) {
+            a[0] = sum;
+            a[1] = 0;
+        } else if(sum > m) {
+            a[0] = m;
+            a[1] = diff; 
+        }
+        a[i] = 0;
+    }
+    cout << a[0] << endl;
+ 
+
+
+    // vector<int> x;
+    
+
+    // for(int i = 0;i < n;i++) {
+    //     cin >> num;
+    //     x.insert(x.end(),1,num);
+    // }
+
+    // sort(x.begin(), x.end());
+
+    // for(int i = 0;i < x.size();i++) {
+        
+    // }
+
+
+}
+........................................
+
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+void init(){
+    cin.tie(0);
+    cin.sync_with_stdio(0);
+}
+
+bool isPrime(ll n) {
+    for(int i = 2;i < n/2;i++) {
+        if(n % i == 0) return false;
+    }
+    return true;
+}
+
+int minimum(int x, int y) {
+    if(x < y) return x;
+    return y;
+}
+
+bool isZeros(vector<ll> a,int n) {
+    for(int i = 0;i < n;i++) {
+        if(a[i] != 0) return false;
+    }
+    return true;
+}
+
+int main(){
+    init();
+
+    ll n;
+    cin >> n;
+    vector<ll> a(n);
+    bool flag = false;
+
+    for(int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+
+    for(int i = 0;i < n-1;i++) {
+        int min = minimum(a[i],a[i+1]);
+        a[i] -= min;
+        a[i+1] -= min;
+    }
+
+    // for(int i = 0; i < n; i++)
+    // {
+    //     cout << a[i] << "  ";
+    // }
+    
+    
+    if(isZeros(a, n)) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+    
+}
+
+
+// vector<ll> a(n);
+// average = sum / n;
+
+// sort(a.begin(), a.end());
+// reverse(a.begin(), a.end());
+// sum = 0;
+
+
+// vector<int> x;
+
+
+// for(int i = 0;i < n;i++) {
+//     cin >> num;
+//     x.insert(x.end(),1,num);
+// }
+
+// sort(x.begin(), x.end());
+
+// for(int i = 0;i < x.size();i++) {
+    
+// }
+
+

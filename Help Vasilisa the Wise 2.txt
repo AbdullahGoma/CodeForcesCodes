@@ -1,0 +1,62 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+using namespace std;
+
+int main(){
+    int r1,r2;
+    int c1,c2;
+    int d1,d2;
+    cin >> r1 >> r2;
+    cin >> c1 >> c2;
+    cin >> d1 >> d2;
+    bool flag = false;
+    // && (i != j != k != l)
+    for(int i = 1;i < 10;i++) {
+        for(int j = 1;j < 10;j++) {
+            for(int k = 1;k < 10;k++) {
+                for(int l = 1;l < 10;l++) {
+                    if(((i != j) && (i != k) && (i != l) && (j != k) && (j != l) && (k != l)) && (c1 == i+k) && (c2 == j+l) && (r1 == i+j) && (r2 == k+l) && (d1 == i+l) && (d2 == j+k)) {
+                        cout << i << " " << j << endl;
+                        cout << k << " " << l << endl;
+                        flag = true;
+                    }
+                }
+            }
+        }
+    }
+
+    if(flag == false) {
+        cout << -1;
+    }
+    
+
+}
+l..........................
+
+
+best 
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+using namespace std;
+
+int main(){
+    int r1,r2;
+    int c1,c2;
+    int d1,d2;
+    cin >> r1 >> r2;
+    cin >> c1 >> c2;
+    cin >> d1 >> d2;
+    int i = (c1 + d1 - r2) / 2;
+    // int i = (r1 + c1 - d2) / 2;
+    int j = r1 - i;
+    int k = c1 - i;
+    int l = d1 - i;
+    if(((i != j) && (i != k) && (i != l) && (j != k) && (j != l) && (k != l)) && (0 < i && i < 10) && (0 < j && j < 10) && (0 < k && k < 10) && (0 < l && l < 10)) {
+        cout << i << " " << j << endl;
+        cout << k << " " << l << endl;
+    } else {
+        cout << -1;
+    }
+}

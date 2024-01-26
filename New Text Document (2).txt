@@ -1,0 +1,388 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    long long a,b,c;
+    cin >> a >> b >> c;
+    if(a <= b && a <= c){
+        cout << a << " ";
+    }else if(b <= a && b <= c ){
+        cout << b << " ";
+    }else{
+        cout << c << " ";
+    }
+    
+    if(a >= b && a >= c){
+        cout << a;
+    }else if(b >= a && b >= c){
+        cout << b;
+    }else{
+        cout << c;
+    }
+    
+}
+
+
+....................
+
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    string s1,s2,s3,s4;
+    cin >> s1 >> s2;
+    cin >> s3 >> s4;
+    if(s2 == s4){
+        cout << "ARE Brothers";
+    }else{
+        cout << "NOT";
+    }
+    
+}
+
+.......................
+
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    char n;
+    cin >> n;
+    if(n >= 48 && n <= 57){
+        cout << "IS DIGIT";
+    }else if(n >= 65 && n <= 90){
+        cout << "ALPHA" << endl << "IS CAPITAL";
+    }else if(n >= 97 && n <= 122){
+        cout << "ALPHA" << endl << "IS SMALL";
+    }
+    
+}
+
+
+.................
+
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    char n;
+    cin >> n;
+    if(n >= 48 && n <= 57){
+        cout << "IS DIGIT";
+    }else if(n >= 65 && n <= 90){
+        cout << "ALPHA" << endl << "IS CAPITAL";
+    }else if(n >= 97 && n <= 122){
+        cout << "ALPHA" << endl << "IS SMALL";
+    }
+    
+}
+
+
+....................
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    char n;
+    cin >> n;
+    if(n >= 65 && n <= 90){
+        cout << (char)(n + 32);
+    }else if(n >= 97 && n <= 122){
+        cout << (char)(n-32);
+    }
+}
+
+
+.....................
+
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    long long a,b;
+    char s;
+    cin >> a >> s >> b;
+    if(s == '+'){
+        cout << a+b;
+    }else if(s == '-'){
+        cout << a-b;
+    }else if(s == '/'){
+        cout << a/b;
+    }else if(s == '*'){
+        cout << a*b;
+    }
+}
+
+
+...............
+
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    string a;
+    cin >> a;
+    if(a[0] % 2 == 0){
+        cout << "EVEN";
+    }else{
+        cout << "ODD";
+    }
+}
+
+
+.................
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    float x,y;
+    cin >> x >> y;
+    if(x > 0 && y > 0){
+        cout << "Q1";
+    }else if(x < 0 && y > 0){
+        cout << "Q2";
+    }else if(x < 0 && y < 0){
+        cout << "Q3";
+    }else if(x > 0 && y < 0){
+        cout << "Q4";
+    }else if(x == 0.0 && y == 0.0){
+        cout << "Origem";
+    }else if(y == 0.0){
+        cout << "Eixo X";
+    }else if(x == 0.0){
+        cout << "Eixo Y";
+    }
+}
+
+.............
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    long long x;
+    cin >> x;
+    long long years = x/365;
+    long long months = (x-(years*365))/30;
+    long long days = x - ((months*30)+(years*365));
+    cout << years << " years" << endl;
+    cout << months << " months" << endl;
+    cout << days << " days" << endl;
+}
+
+
+................
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    float x;
+    cin >> x;
+    if(x > 100 || x < 0){
+        cout << "Out of Intervals";
+    }else if(x >= 0.0 && x <= 25.0){
+        cout << "Interval [0,25]";
+    }else if(x > 25.0 && x <= 50.0){
+        cout << "Interval (25,50]";
+    }else if(x > 50.0 && x <= 75.0){
+        cout << "Interval (50,75]";
+    }else if(x > 75.0 && x <= 100.0){
+        cout << "Interval (75,100]";
+    }
+}
+
+
+.........................
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int a,b,c;
+    cin >> a >> b >> c;
+    int x = a,y = b,z = c;
+    if (x <= y && y <= z){
+    printf("%d\n%d\n%d",x,y,z);
+    }
+    else{
+        if (x <= z && z <= y){
+            printf("%d\n%d\n%d",x,z,y);
+        }
+        else{
+
+            if (y <= x && x <= z){
+            printf("%d\n%d\n%d",y,x,z);
+            }
+            else{
+
+            if (y <= z && z <= x){
+                printf("%d\n%d\n%d",y,z,x);
+            }
+            else{
+
+                if (z <= x && x <= y){
+                printf("%d\n%d\n%d",z,x,y);
+                }
+                else{
+                if (x == y && y == z){
+                    printf("%d\n%d\n%d",x,y,z);
+                }
+                else{
+                    printf("%d\n%d\n%d",z,y,x);
+                }
+                }
+            }
+            }
+        }
+    }
+
+    cout << "\n\n" << a << "\n" << b << "\n" << c;
+}
+
+.............................................
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    float n;
+    cin >> n;
+    int a = n;
+    float b = n - a;
+    if(b > 0.0){
+        cout << "float " << a << " " << setprecision(3) << b;
+    }else{
+        cout << "int " << a;
+    }
+}
+
+
+
+.......................
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int a, c;
+    char b;
+    cin >> a >> b >> c;
+    if(a > c && (b == '>')){
+        cout << "Right";
+    }else if(c > a && (b == '<')){
+        cout << "Right";
+    }else if(a == c && (b == '=')){
+        cout << "Right";
+    }else{
+        cout << "Wrong";
+    }
+}
+
+
+
+.......................
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int a, c,d;
+    char b,q;
+    cin >> a >> b >> c >> q >> d;
+    int k = a;
+    if((a + c) == d && (b == '+')){
+        cout << "Yes";
+    }else if((a - c) == d && (b == '-')){
+        cout << "Yes";
+    }else if((a * c) == d && (b == '*')){
+        cout << "Yes";
+    }else{
+        if(b == '+'){
+            cout << a + c;
+        }else if(b == '-'){
+            cout << a - c;
+        }else if(b == '*'){
+            cout << a * c;
+        }
+    }
+}
+
+
+...........................
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    long long a,b,c,d;
+    cin >> a >> b >> c >> d;
+    if((a >= c && a <= d) && (b >= c && b <= d)){
+        cout << a << " " << b; //a,b between c,d
+    }else if((c >= a && c <= b) && (d >= a && d <= b)){
+        cout << c << " " << d; //c,d between a,b
+    }else if((a >= c && a <= d)&& (b >= c && b >= d)){
+        cout << a << " " << d; // 1 10 0 5
+    }else if(a <= c && (b >= c && b <= d)){
+        cout << c << " " << b; // 0 5 1 10
+    }else if(a == d){
+        cout << a << " " << a; // 5 7 1 5
+    }else if(b == c){
+        cout << b << " " << b; // 1 5 5 7
+    }else{
+        cout << -1;
+    }
+}
+
+
+..............
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    long long a,b,c,d;
+    cin >> a >> b >> c >> d;
+    long long e = a % 100,f = b % 100,g = c % 100,h = d % 100;
+    long long num = (e*f*g*h);
+    string number = to_string(num);
+    int n = number.length();
+    if(num == 0){
+        cout << "00";
+    }else{
+        cout << number[n-2] << number[n-1] ;
+    }
+}
+
+
+....................
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    double a,b,c,d;
+    cin >> a >> b >> c >> d;
+    double num1 = b*log(a),num2 = d*log(c); //num1 = num2
+    if(num1 > num2){
+        cout << "YES";
+    }else{
+        cout << "NO" ;
+    }
+}
+
+

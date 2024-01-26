@@ -1,0 +1,79 @@
+with arrangement
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+using namespace std;
+ 
+int main(){
+    ll s,n;
+    int x,y;
+    bool flag = true;
+    cin >> s >> n;
+
+    while(cin >> x >> y) {
+        if(s > x) {
+            s += y;
+        } else {
+            flag = false;
+            break;
+        }
+    }
+    
+    if(flag) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+
+}
+
+
+...........................................
+without arrangement
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+using namespace std;
+ 
+int main(){
+    ll s,n;
+    bool flag = true;
+    cin >> s >> n;
+
+    int x[n] ,y[n];
+    
+    for(int i = 0;i < n;i++) {
+        cin >> x[i] >> y[i];
+    }
+
+    for(int i = 0;i < n;i++) {
+        for(int j = 0;j < n;j++) {
+            if(x[i] < x[j]) {
+                int temp = x[i];
+                x[i] = x[j];
+                x[j] = temp;
+                int tem = y[i];
+                y[i] = y[j];
+                y[j] = tem;
+            }
+        }
+    }
+    
+    for(int i = 0;i < n;i++) {
+        if(s > x[i]) {
+            s += y[i]; 
+        } else {
+            flag = false;
+        }
+    }
+
+    if(flag) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;   
+    }
+
+}
+

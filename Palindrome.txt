@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+ 
+ 
+int main(){
+    ll n;
+    cin >> n;
+    ll res = n;
+    ll sum = 0;
+    while(n) {
+        int x = n % 10;
+        sum = sum * 10 + x;
+        n /= 10;
+    }
+    if(res == sum) cout << sum << endl << "YES";
+    else cout << sum << endl << "NO";
+    
+}
+

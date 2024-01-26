@@ -1,0 +1,379 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define endl '\n'
+
+//ll prefix_sum[100000];
+
+void init(){
+    cin.tie(0);
+    cin.sync_with_stdio(0);
+}
+ll GCD(ll a, ll b) {
+    if (b == 0)
+        return a;
+    return GCD(b, a % b);
+}
+ 
+ll LCM(ll a, ll b) {
+    return a / GCD(a, b) * b;
+}
+
+bool Prime(int x) {
+    if (x < 2)
+        return false;
+    for (int i = 2; i * i <= x; i++) {
+        if (x % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool EvenOddEqual(int a[],int n) {
+    int odd = 0;
+    int even = 0;
+    for(int i = 0;i < n;i++) {
+        if(a[i] % 2 == 0) {
+            even++;
+        } else {
+            odd++;
+        }
+    }
+    return odd == even;
+}
+
+ll FibBetterEff(int n){
+    ll a[n];
+    a[0] = 0;
+    a[1] = 1;
+    for(int i = 2;i < n;i++){
+        a[i] = a[i-1] + a[i-2];
+    }
+    return a[n - 1];;
+}
+
+bool binarySearch(ll a[],int n,int key){
+    int start = 0;
+    int end = n - 1;
+    while(start <= end){
+        int finder = end + (start - end) / 2;
+        if(key == a[finder]) return true;
+        else if(key > a[finder]) start = finder + 1;
+        else end = finder - 1;
+    }
+    return false;
+}
+
+//ll countt[100000];
+
+int main() {
+    int x, y;
+    cin >> x >> y;
+    char a[x][y];
+    for(int i = 0;i < x;i++){
+        for(int j = 0;j < y;j++){
+            cin >> a[i][j];
+        }
+    }
+    int indexI, indexJ;
+    cin >> indexI >> indexJ;
+    indexI--;
+    indexJ--;
+    // bool flag = true;
+    // for(int i = indexI - 1;i < indexI + 2;i++){
+    //     for(int j = indexJ - 1;j < indexJ + 2;j++){
+    //         if(a[i][j] == a[indexI][indexJ]) continue;
+    //         if(a[i][j] == '.'){
+    //             flag = false;
+    //             break;
+    //         }
+    //     }
+    // }
+
+    // if(flag) cout << "yes" << endl;
+    // else cout << "no" << endl;
+    if(a[indexI - 1][indexJ - 1] != '.' && a[indexI - 1][indexJ] != '.' && a[indexI][indexJ - 1] != '.'
+    && a[indexI - 1][indexJ + 1] != '.' && a[indexI][indexJ + 1] != '.' && a[indexI + 1][indexJ - 1] != '.'
+    && a[indexI + 1][indexJ] != '.' && a[indexI + 1][indexJ + 1] != '.'){
+        cout << "yes" << endl;
+    } else cout << "no" << endl;
+
+    return 0;
+}
+/////////////////////////////////////////////////
+
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define endl '\n'
+ 
+//ll prefix_sum[100000];
+ 
+void init(){
+    cin.tie(0);
+    cin.sync_with_stdio(0);
+}
+ll GCD(ll a, ll b) {
+    if (b == 0)
+        return a;
+    return GCD(b, a % b);
+}
+ 
+ll LCM(ll a, ll b) {
+    return a / GCD(a, b) * b;
+}
+ 
+bool Prime(int x) {
+    if (x < 2)
+        return false;
+    for (int i = 2; i * i <= x; i++) {
+        if (x % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+ 
+bool EvenOddEqual(int a[],int n) {
+    int odd = 0;
+    int even = 0;
+    for(int i = 0;i < n;i++) {
+        if(a[i] % 2 == 0) {
+            even++;
+        } else {
+            odd++;
+        }
+    }
+    return odd == even;
+}
+ 
+ll FibBetterEff(int n){
+    ll a[n];
+    a[0] = 0;
+    a[1] = 1;
+    for(int i = 2;i < n;i++){
+        a[i] = a[i-1] + a[i-2];
+    }
+    return a[n - 1];;
+}
+ 
+bool binarySearch(ll a[],int n,int key){
+    int start = 0;
+    int end = n - 1;
+    while(start <= end){
+        int finder = end + (start - end) / 2;
+        if(key == a[finder]) return true;
+        else if(key > a[finder]) start = finder + 1;
+        else end = finder - 1;
+    }
+    return false;
+}
+ 
+//ll countt[100000];
+ 
+int main() {
+    int x, y;
+    cin >> x >> y;
+    char a[x][y];
+    for(int i = 0;i < x;i++){
+        for(int j = 0;j < y;j++){
+            cin >> a[i][j];
+        }
+    }
+    int indexI, indexJ;
+    cin >> indexI >> indexJ;
+    indexI--;
+    indexJ--;
+    bool flag = true;
+    for(int i = indexI - 1; i <= indexI + 1; i++) {
+        for(int j = indexJ - 1; j <= indexJ + 1; j++) {
+            if (i == indexI && j == indexJ) continue; 
+            if (i < 0 || j < 0 || i >= x || j >= y) continue; 
+            if (a[i][j] != 'x') {
+                flag = false;
+                break;
+            }
+        }
+        if (!flag) break; 
+    }
+ 
+ 
+    if(flag) cout << "yes" << endl;
+    else cout << "no" << endl;
+ 
+    return 0;
+}
+
+
+////////////////////////////////////
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define endl '\n'
+ 
+//ll prefix_sum[100000];
+ 
+void init(){
+    cin.tie(0);
+    cin.sync_with_stdio(0);
+}
+ll GCD(ll a, ll b) {
+    if (b == 0)
+        return a;
+    return GCD(b, a % b);
+}
+ 
+ll LCM(ll a, ll b) {
+    return a / GCD(a, b) * b;
+}
+ 
+bool Prime(int x) {
+    if (x < 2)
+        return false;
+    for (int i = 2; i * i <= x; i++) {
+        if (x % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+ 
+bool EvenOddEqual(int a[],int n) {
+    int odd = 0;
+    int even = 0;
+    for(int i = 0;i < n;i++) {
+        if(a[i] % 2 == 0) {
+            even++;
+        } else {
+            odd++;
+        }
+    }
+    return odd == even;
+}
+ 
+ll FibBetterEff(int n){
+    ll a[n];
+    a[0] = 0;
+    a[1] = 1;
+    for(int i = 2;i < n;i++){
+        a[i] = a[i-1] + a[i-2];
+    }
+    return a[n - 1];;
+}
+ 
+bool binarySearch(ll a[],int n,int key){
+    int start = 0;
+    int end = n - 1;
+    while(start <= end){
+        int finder = end + (start - end) / 2;
+        if(key == a[finder]) return true;
+        else if(key > a[finder]) start = finder + 1;
+        else end = finder - 1;
+    }
+    return false;
+}
+ 
+//ll countt[100000];
+ 
+int main() {
+    int x, y;
+    cin >> x >> y;
+    char a[x][y];
+    for(int i = 0;i < x;i++){
+        for(int j = 0;j < y;j++){
+            cin >> a[i][j];
+        }
+    }
+    int indexI, indexJ;
+    cin >> indexI >> indexJ;
+    indexI--;
+    indexJ--;
+    bool flag = true;
+    for(int i = indexI - 1;i < indexI + 2;i++){
+        for(int j = indexJ - 1;j < indexJ + 2;j++){
+            if (i == indexI && j == indexJ) continue;
+ 
+            if(a[i][j] == '.'){
+                flag = false;
+                break;
+            }
+        }
+    }
+ 
+    if(flag) cout << "yes" << endl;
+    else cout << "no" << endl;
+ 
+    return 0;
+}
+
+//////////////////////////////////////
+
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+ 
+ 
+    vector<pair<int, int>> allDirections = {
+        {-1, 0},
+        {1, 0},
+        {0, -1},
+        {0, 1},
+        {-1, -1},
+        {-1, 1},
+        {1, -1},
+        {1, 1}
+    };
+    long long x, y ;
+    cin >> x >> y ;
+            vector<pair<int, int>> validDirections;
+            for (auto dir : allDirections) {
+                int newRow = x + dir.first - 1;
+                int newCol = y + dir.second - 1;
+                cout << newRow << " " << newCol << endl;
+            }
+    //cout << "-------------------------------------------\n" ;
+    int indexI, indexJ;
+    cin >> indexI >> indexJ;
+    cout << "-------------------------------------------\n" ;
+    indexI--;
+    indexJ--;
+    bool flag = true;
+    for(int i = indexI - 1;i < indexI + 2;i++){
+        for(int j = indexJ - 1;j < indexJ + 2;j++){
+                cout << i << " " << j << endl;
+        }
+    }
+    return 0;
+}
+ 
+/*
+initial cell 3 3 ( right checking )
+1 2
+3 2
+2 1
+2 3
+1 1
+1 3
+3 1
+3 3
+ 
+-------------------------------------------
+initial cell 3 3 ( wrong checking )
+1 1
+1 2
+1 3
+2 1
+2 2
+2 3
+3 1
+3 2
+3 3
+*/
